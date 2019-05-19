@@ -47,14 +47,14 @@ clear.addEventListener("click", function() {
 
 
 function addToDo(toDo, id, done, trash)  {
-
+    var d = date()
     if(trash) {return; }
 
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : "";
     const item =    `<li class="item">
                         <i class="fa ${DONE} co" job="complete" id="${id}"> </i>
-                        <p class="text ${LINE}"> ${toDo} </p>
+                        <p class="text ${LINE}"> ${toDo} ${d} </p>
                         <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
                     </li> 
                     `;
