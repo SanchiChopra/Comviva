@@ -2359,3 +2359,22 @@
   height: 150px;
 
 }
+
+#rotate {
+  width: 12px;
+  float: right;
+  font-size: 18px;
+  margin-top: -6px;
+  transform: rotate(45deg);
+  text-align: center;
+  transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  }
+ #rotate.spin {
+  transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+ }

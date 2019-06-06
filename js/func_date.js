@@ -25,7 +25,7 @@ console.log(localStorage.getItem("displayDate"));
     startTime();
 })();
 
-(function(document){
+/*(function(document){
     var div = document.getElementById('clearid');
     var icon = document.getElementById('icon');
     //var open = false;
@@ -49,4 +49,26 @@ console.log(localStorage.getItem("displayDate"));
         else { flag=0;
                 icon.className = 'fa fa-arrow-down open';}
     });
-})
+})*/
+
+/*$('#refresh_icon').on('click',function() {
+  if($(this).is(':checked'))
+    {  $('#rotate').toggleClass('spin');  }
+}); */
+
+if(localStorage.getItem('displayRefresh') === null){
+
+  localStorage.setItem("displayRefresh", "block");
+  $("icon").css({backgroundColor: "red"});
+}
+console.log(localStorage.getItem("displayRefresh"));
+(function () {
+
+  var doc1 = document.getElementById('icon');
+  document.getElementById('icon').style.cssText = "backgroundColor: 'red';";
+  doc1.style.display = localStorage.getItem("displayRefresh");
+  console.log(localStorage.getItem("displayRefresh"));
+
+
+
+})();
