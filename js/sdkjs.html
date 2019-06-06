@@ -30,14 +30,14 @@
                     Date
                 </div>
 
-
-                <label for="refresh_icon">            
-                    <input type="checkbox" id="refresh_icon" />
+                <input type="checkbox" name="refresh_icon" class="hidden" id="refresh_icon" onclick="refreshFunc(this)"/>
+                <label for="refresh_icon"> 
                     Rotate refresh?
+                    
                 </label>
-                <p class="clearid" style="display: none">
+                <div class="clearid">
                     Refresh
-                </p>
+                </div>
 
         <script>
             if(localStorage.getItem("displayDate") === null) {
@@ -50,19 +50,19 @@
                 console.log(localStorage.getItem("displayDate"));
             }
             
-            if(localStorage.getItem("displayRefresh") === null) {
+            /*if(localStorage.getItem("displayRefresh") === null) {
                 localStorage.setItem("displayRefresh", "block");
-            }
+            }*/
 
             function refreshFunc(refresh_icon) {
                 localStorage.setItem("displayRefresh", refresh_icon.checked ? "block" : "none");
                 var doc = document.getElementById("clearid");
                 doc.style.display = refresh_icon.checked ? "block" : "none";
                 console.log(localStorage.getItem("displayRefresh"));
-                console.log(document.getElementById('test2').setItem());
+                //console.log(document.getElementById('test2').setItem());
             }
             
-            $(document).ready(function(){
+            /*$(document).ready(function(){
                 $('#refresh_icon').on('click',function(){
                     if($(this).is(':checked'))
                         { flag=1;
@@ -70,7 +70,13 @@
                     else { flag=0;
                             icon.className = 'fa fa-arrow-down open';}
                 });
-            })
+            })/
+            $("#refresh_icon").on("click",function(){
+
+                localStorage.setItem('button', 'clicked');
+                window.location.href = "index.html";
+
+            }); *
         </script>
         
     </body>
